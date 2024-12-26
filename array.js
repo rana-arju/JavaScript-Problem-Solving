@@ -98,4 +98,33 @@ const mergeSortedArrays = (arr1, arr2) => {
   return margeArray;
 };
 
-console.log(mergeSortedArrays([0, 3, 4, 31], [4, 6, 30])); // [0,3,4,4,6,30,31]
+// console.log(mergeSortedArrays([0, 3, 4, 31], [4, 6, 30])); // [0,3,4,4,6,30,31]
+
+var merge = function (nums1, m, nums2, n) {
+  const len = m + n;
+  nums1.splice(len - n);
+  for (let i = 0; i < n; i++) {
+    nums1.push(nums2[i]);
+  }
+
+  for (let j = 1; j < len; j++) {
+    console.log("first", nums1);
+    if (nums1[j - 1] || nums1[j - 1] === 0) {
+      
+      if (nums1[j] < nums1[j - 1]) {
+        let tmp = nums1[j - 1];
+        nums1[j - 1] = nums1[j];
+        nums1[j] = tmp;
+        j = j - 2;
+      }
+    }
+  }
+   return nums1;
+};
+// nums1 = [1,2,3,2,5,6]
+const nums1 = [1, 2, 3, 0, 0, 0];
+const nums2 = [2, 5, 6];
+const m = 3;
+const n = 3;
+console.log(merge(nums1, m, nums2, n))
+
