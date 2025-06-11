@@ -28,5 +28,22 @@ function countOccurrences(arr) {
     return acc;
   }, {});
 }
+// Fizz Buzz Problem
+const fizzBuzz = (n) => {
+  for (let i = 1; i <= n; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      console.log("fizz buzz");
 
-console.log(countOccurrences([23, 34, 34, 534, 6754, 5, 74, 5, 6]));
+    } else if (i % 3 === 0) {
+      console.log("fizz");
+
+    } else if (i % 5) {
+      console.log("Buzz");
+
+    } else {
+      console.log(i);
+
+      }
+    }
+};
+console.log(fizzBuzz(2));
