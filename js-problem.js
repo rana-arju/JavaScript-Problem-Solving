@@ -33,23 +33,44 @@ const fizzBuzz = (n) => {
   for (let i = 1; i <= n; i++) {
     if (i % 3 === 0 && i % 5 === 0) {
       console.log("fizz buzz");
-
     } else if (i % 3 === 0) {
       console.log("fizz");
-
     } else if (i % 5) {
       console.log("Buzz");
-
     } else {
       console.log(i);
-
-      }
     }
+  }
 };
 
 // flattenArray
 
 function flattenArray(arr) {
-    return arr.flat(Infinity)
+  return arr.flat(Infinity);
 }
-console.log(flattenArray([2,[423,["afdas"]]]));
+//  Debounce funcion
+
+function debounce(fn, delay = 300) {
+  let timer;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn.apply(this, args), delay);
+  };
+}
+function saveInput() {
+  console.log("Saving data");
+}
+const processChange = debounce(() => saveInput());
+
+// check if two strings are anagrams
+function isAnagram(str1, str2) {
+  const format = (s) =>
+    s
+      .toLowerCase()
+      .replace(/[^a-z]/g, "")
+      .split("")
+      .sort()
+      .join("");
+  return format(str1) === format(str2);
+}
+console.log(isAnagram("slient", "listet"));
