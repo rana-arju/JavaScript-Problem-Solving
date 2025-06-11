@@ -46,4 +46,10 @@ const fizzBuzz = (n) => {
       }
     }
 };
-console.log(fizzBuzz(2));
+
+// flattenArray
+
+function flattenArray(arr) {
+    return arr.flat(Infinity)
+}
+console.log(flattenArray([2,[423,["afdas"]]]));
