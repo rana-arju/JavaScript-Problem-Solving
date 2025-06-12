@@ -73,4 +73,12 @@ function isAnagram(str1, str2) {
       .join("");
   return format(str1) === format(str2);
 }
-console.log(isAnagram("slient", "listet"));
+
+// find missing number in array (1 to N)
+
+function findNumberMissing(arr, n) {
+  const expectedSum = (n * (n + 1)) / 2;
+  const actualSum = arr.reduce((acc, val) => acc + val, 0);
+  return expectedSum - actualSum;
+}
+console.log(findNumberMissing([2,4,5,6,7,8,9,10], 10));
