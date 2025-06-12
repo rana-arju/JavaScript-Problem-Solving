@@ -4,4 +4,12 @@ function fact(n){
   return n * fact(n-1)
 }
 
-console.log(fact(5));
+// fibonacci
+
+
+function fibo(n) {
+  if (n <= 1) return n
+  return fibo(n-1) + fibo(n-2)
+}
+
+console.log(fibo(6));
